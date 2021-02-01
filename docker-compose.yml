@@ -1,0 +1,28 @@
+version: '3.1'
+
+networks:
+  bdd:
+
+services:
+  db: 
+    image: "postgres:${POSTGRES_VERSION}"
+    container_name: "postgres_DevOps"
+    restart: "always"
+    volumes:
+    - "./db_volume/:/var/lib/postgresql/data"
+    - "./docker-entrypoint-initdb.d/:/docker-entrypoint-initdb.d/"
+    environment:
+    - "POSTGRES_DB=db"
+    - "POSTGRES_USER=toudard"
+    - "POSTGRES_PASSWORD=${DB_PASSWORD}"
+    networks:
+    - bdd
+
+  adminer:
+    image: "adminer:${ADMINER_VERSION}"
+    container_name: "adminer_DevOps"
+    restart: "always"
+    ports:
+    - "8080:8080"
+    networks:
+    - bdd
