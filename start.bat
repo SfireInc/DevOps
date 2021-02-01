@@ -1,1 +1,1 @@
-docker-compose --env-file var.env up
+docker-compose --env-file env/var.env up
