@@ -17,15 +17,6 @@ services:
     - "POSTGRES_PASSWORD=${DB_PASSWORD}"
     networks:
     - bdd
-
-  adminer:
-    image: "adminer:${ADMINER_VERSION}"
-    container_name: "adminer_DevOps"
-    restart: "always"
-    ports:
-    - "8080:8080"
-    networks:
-    - bdd
   
   java:
     build:
@@ -36,8 +27,6 @@ services:
     restart: "always"
     environment:
     - "SPRING_DATASOURCE_PASSWORD=${DB_PASSWORD}"
-    ports:
-    - "8081:8080"
     networks: 
     - bdd
   
@@ -49,4 +38,6 @@ services:
     container_name: "httpd_DevOps"
     restart: "always"
     ports:
-    - "8082:80"
+    - "80:80"
+    networks: 
+    - bdd
