@@ -1,0 +1,14 @@
+spring:
+  jpa:
+    properties:
+      hibernate:
+        jdbc:
+          lob:
+            non_contextual_creation: true
+    generate-ddl: false
+    open-in-view: true
+  datasource:
+    url: "jdbc:postgresql://postgres_DevOps:5432/db"
+    username: toudard
+    password: 1234
+    driver-class-name: org.postgresql.Driver

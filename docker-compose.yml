@@ -28,8 +28,10 @@ services:
     - bdd
   
   java:
-    image: "java_devops:latest"
+    build: .
     container_name: "java_DevOps"
     restart: "always"
     ports:
     - "8081:8080"
+    networks: 
+    - bdd
