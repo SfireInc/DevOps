@@ -28,7 +28,9 @@ services:
     - bdd
   
   java:
-    build: .
+    build:
+      context: .
+      dockerfile: java.dockerfile
     image: "java-devops"
     container_name: "java_DevOps"
     restart: "always"
@@ -38,3 +40,13 @@ services:
     - "8081:8080"
     networks: 
     - bdd
+  
+  httpd:
+    build:
+      context: .
+      dockerfile: httpd.dockerfile
+    image: "httpd-devops"
+    container_name: "httpd_DevOps"
+    restart: "always"
+    ports:
+    - "8082:80"
