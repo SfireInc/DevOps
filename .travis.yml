@@ -1,8 +1,0 @@
-services:
-- docker
-
-env:
-- DOCKER_COMPOSE_VERSION=1.27.4
-
-before_install:
-- docker-compose --env-file env/var.env up
