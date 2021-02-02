@@ -21,7 +21,7 @@ When the container is launched, the folders of the container will be "synchronis
 
 ## Multistage build
 
-The multistage build allows us to use maven for the build and compile an entire package directly into a container.
+The multistage build allows us to build and compile an entire package directly into a container, and copy the results of the build to the target destination.
 It enables us to build and run java on any machine, without the need to install jre or jdk.
 
 ## Reverse Proxy
