@@ -29,8 +29,11 @@ services:
   
   java:
     build: .
+    image: "java-devops"
     container_name: "java_DevOps"
     restart: "always"
+    environment:
+    - "SPRING_DATASOURCE_PASSWORD=${DB_PASSWORD}"
     ports:
     - "8081:8080"
     networks: 
