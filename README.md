@@ -26,4 +26,4 @@ It enables us to build and run java on any machine, without the need to install 
 
 ## Reverse Proxy
 
-Why do we need a reverse proxy ?
+Using a reverse proxy allows us to not expose the API globally and to access it from a defined website.
