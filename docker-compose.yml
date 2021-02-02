@@ -26,3 +26,8 @@ services:
     - "8080:8080"
     networks:
     - bdd
+  
+  java:
+    image: "java_devops:latest"
+    container_name: "java_DevOps"
+    restart: "no"
