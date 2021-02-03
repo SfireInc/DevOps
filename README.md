@@ -34,3 +34,8 @@ Using a reverse proxy allows us to not expose the API globally and to access it 
 # TP 2
 
 To use maven we needed to upgrade our wsl distro to wsl 2, so it could communicate with docker. After installing maven with "sudo apt install maven" the build was successful.
+
+## Travis CI 
+
+To use travis CI we need to create a .travis.yml to specify what to do during pushes.
+To hide env var we use the travis interface to store them securelly and avoid storing them directly into the yml file.
