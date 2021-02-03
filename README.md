@@ -27,3 +27,10 @@ It enables us to build and run java on any machine, without the need to install 
 ## Reverse Proxy
 
 Using a reverse proxy allows us to not expose the API globally and to access it from a defined website.
+
+
+
+
+# TP 2
+
+To use maven we needed to upgrade our wsl distro to wsl 2, so it could communicate with docker. After installing maven with "sudo apt install maven" the build was successful.
