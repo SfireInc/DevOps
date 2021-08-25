@@ -111,7 +111,7 @@ Using a reverse proxy allows us to not expose the API globally and to access it 
 
     ```yml
     networks:
-    bdd:
+      bdd:
     ```
 
     Creation of an internal docker network.
