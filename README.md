@@ -266,5 +266,11 @@ $basearch is related to the architecture (x86, x64, ARM, ...) the app is deploye
           name: launch_frontend
     ```
 
-    
+## Github link
+
+All projects are public
+
+[Docker-compose, java app, BDD and httpd web/conf](https://github.com/SfireInc/DevOps)  
+[Frontend, Backend and CI/CD](https://github.com/SfireInc/sample-application-students)  
+[Ansible deploiement with playbook and role](https://github.com/SfireInc/ansible-app)
 
