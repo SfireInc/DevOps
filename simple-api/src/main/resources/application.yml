@@ -8,43 +8,13 @@ spring:
     generate-ddl: false
     open-in-view: true
   datasource:
-    url: "jdbc:postgresql://postgres_DevOps:5432/${POSTGRES_DB:db}"
-    username: ${POSTGRES_USER:toudard}
-    password: ${SPRING_DATASOURCE_PASSWORD}
+    url: "jdbc:postgresql://postgres_DevOps:5432/db"
+    username: toudard
     driver-class-name: org.postgresql.Driver
-  # Production-ready settings
-  profiles:
-    active: ${SPRING_PROFILES_ACTIVE:prod}
-  # Enable graceful shutdown
-  lifecycle:
-    timeout-per-shutdown-phase: 30s
 
-# Actuator endpoints for health monitoring
-management:
-  endpoints:
-    web:
-      exposure:
-        include: health,info,metrics,prometheus
-  endpoint:
-    health:
-      show-details: when_authorized
-      probes:
-        enabled: true
-  health:
-    livenessState:
-      enabled: true
-    readinessState:
-      enabled: true
-
-# Server configuration
-server:
-  shutdown: graceful
-  tomcat:
-    max-threads: 200
-    min-spare-threads: 20
-    max-connections: 10000
-    accept-count: 100
-  compression:
-    enabled: true
-    mime-types: application/json,application/xml,text/html,text/xml,text/plain
-    min-response-size: 2048
+# Application specific properties
+app:
+  security:
+    # Password can be set here for production use
+    # If not set, a random password will be generated at first deployment
+    # password: ${ADMIN_PASSWORD:}
