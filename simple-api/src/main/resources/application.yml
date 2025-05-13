@@ -11,3 +11,10 @@ spring:
     url: "jdbc:postgresql://postgres_DevOps:5432/db"
     username: toudard
     driver-class-name: org.postgresql.Driver
+
+# Application specific properties
+app:
+  security:
+    # Password can be set here for production use
+    # If not set, a random password will be generated at first deployment
+    # password: ${ADMIN_PASSWORD:}
