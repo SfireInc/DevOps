@@ -1,27 +1,40 @@
 package fr.takima.training.simpleapi.entity;
 
+import io.swagger.v3.oas.annotations.media.Schema;
+
 import javax.persistence.*;
+import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Pattern;
 import javax.validation.constraints.Size;
 
 @Entity
 @Table(name = "students")
+@Schema(description = "Student entity representing a student in the system")
 public class Student {
     @Id
     @GeneratedValue (strategy = GenerationType.IDENTITY)
+    @Schema(description = "Unique identifier of the student", example = "1")
     private Long id;
 
-    @Size(max = 20)
+    @Size(max = 20, message = "First name cannot be longer than 20 characters")
+    @Pattern(regexp = "^[a-zA-Z\\s]*$", message = "First name can only contain letters and spaces")
     @Column(name = "first_name")
+    @Schema(description = "Student's first name", example = "John")
     private String firstname;
 
-    @NotNull
-    @Size(max = 30)
+    @NotNull(message = "Last name cannot be null")
+    @NotBlank(message = "Last name cannot be empty")
+    @Size(max = 30, message = "Last name cannot be longer than 30 characters")
+    @Pattern(regexp = "^[a-zA-Z\\s]*$", message = "Last name can only contain letters and spaces")
     @Column(name = "last_name")
+    @Schema(description = "Student's last name", example = "Doe")
     private String lastname;
 
+    @NotNull(message = "Department cannot be null")
     @ManyToOne
     @JoinColumn(name = "department_id", nullable = false)
+    @Schema(description = "Department the student belongs to")
     private Department department;
 
     public Long getId() {
